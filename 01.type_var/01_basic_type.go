@@ -5,7 +5,7 @@ import "fmt"
 func main() {
 	// ---- Integers
 	// int, int8, int16, int32(rune), int64
-	// uint, uint8, uint16, uint32, uint64
+	// uint, uint8(byte), uint16, uint32, uint64
 	{
 		var n64 int64
 		n64 = 200000
