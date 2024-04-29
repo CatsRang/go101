@@ -17,6 +17,11 @@ func main() {
 	}
 
 	// ---- Maps
+	/*
+		Map is a built-in data type that associates key and values.
+		It's an unordered collection where you can store and retrieves values by keys.
+		Maps are useful when you need to look up data quickly by a custome index.
+	*/
 	{
 		// Creating a map with string keys and int values
 		var ages map[string]int
@@ -48,7 +53,38 @@ func main() {
 	}
 
 	// ---- Pointers
+	/*
+		A pointer holds the memory address of a value.
+		Pointers are used to access and modify the values of variables indirectly.
+		They are particulary useful when you want to avoid copying large structs
+		or when you need to modify the original variable.
+	*/
+	{
+		v1 := 10
+		p1 := &v1
+
+		fmt.Println("> ", v1, p1, *p1)
+
+		*p1 = 20
+		fmt.Println("> ", v1, p1, *p1)
+	}
 
 	// ---- Functions
+	/*
+		Functions in Go can also be treated as values.
+		You can assign them to variables, pass them as arguments to other functions, and even return them from functions.
+		This makes Go functions highly versatile, allowing for functional programming patterns like closures.
+	*/
+	{
+		fcompute := func(fn func(float64, float64) float64, a float64, b float64) float64 {
+			return fn(a, b)
+		}
+
+		fsquare := func(x, y float64) float64 {
+			return x*x + y*y
+		}
+
+		fmt.Println("> ", fcompute(fsquare, 2, 3))
+	}
 
 }
