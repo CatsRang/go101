@@ -16,7 +16,7 @@ const (
 )
 
 func (w DayOfWeek) String() string {
-	return [...]string{"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"}[w-1]
+	return [...]string{"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"}[w]
 }
 
 func main() {
@@ -46,6 +46,7 @@ func main() {
 	// enum def
 	// enum String function
 
-	fmt.Printf("> %v %T %v %T\n", Monday, Monday, Friday, Friday)
+	fmt.Printf("> %d %v %T\n", Sunday, Sunday, Sunday)
+	fmt.Printf("> %d %v %T\n", Saturday, Saturday, Saturday)
 	fmt.Println(">", Wednesday.String())
 }
