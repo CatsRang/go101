@@ -34,7 +34,7 @@ func main() {
 	/*
 		The empty interface type(interface{}) has no methods,
 		so all types implement it by default.
-		It can hold values of any type, simliar to 'void*' in C or 'Object' in Java.
+		It can hold values of any type, similar to 'void*' in C or 'Object' in Java.
 		However, using 'interface{}' sacrifices type safety for flexibility and should be done cautiously.
 	*/
 
