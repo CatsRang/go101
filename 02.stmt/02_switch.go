@@ -30,33 +30,37 @@ func main() {
 	}
 
 	// ---- 03.  case list
-	c := 'a'
-	fmt.Printf("> %T, %c\n", c, c) // int32(rune), 97
+	{
+		c := 'a'
+		fmt.Printf("> %T, %c\n", c, c) // int32(rune), 97
 
-	switch c {
-	case 'a', 'b':
-		fmt.Println("> alphabet:", c)
-	default:
-		fmt.Println("> unknown:", c)
+		switch c {
+		case 'a', 'b':
+			fmt.Println("> alphabet:", c)
+		default:
+			fmt.Println("> unknown:", c)
+		}
 	}
 
 	// ---- 04. Switch type
-	var i interface{} = 'r'
-	switch i.(type) {
-	case float64:
-		fmt.Println("> float64", c)
-	case int32:
-		fmt.Printf("> rune, %U, %U, %U, %U\n", 'a', 'z', 'A', 'Z')
+	{
+		var i interface{} = 'r'
+		switch i.(type) {
+		case float64:
+			fmt.Println("> float64", c)
+		case int32:
+			fmt.Printf("> rune, %U, %U, %U, %U\n", 'a', 'z', 'A', 'Z')
 
-		ri := i.(rune)
-		if (ri >= 'a' && ri <= 'z') || (ri >= 'A' && ri <= 'Z') {
-			fmt.Printf("> rune, alphabet: %c, %#U\n", ri, ri)
-			break
+			ri := i.(rune)
+			if (ri >= 'a' && ri <= 'z') || (ri >= 'A' && ri <= 'Z') {
+				fmt.Printf("> rune, alphabet: %c, %#U\n", ri, ri)
+				break
+			}
+
+			fmt.Printf("> rune, non alphabet: %c\n", i)
+		default:
+			fmt.Printf("> rune, unknown %T, %c\n", c, c)
 		}
-
-		fmt.Printf("> rune, non alphabet: %c\n", i)
-	default:
-		fmt.Printf("> rune, unknown %T, %c\n", c, c)
 	}
 
 	// fallthrough
