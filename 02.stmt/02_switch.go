@@ -47,7 +47,7 @@ func main() {
 		var i interface{} = 'r'
 		switch i.(type) {
 		case float64:
-			fmt.Println("> float64", c)
+			fmt.Println("> float64", i)
 		case int32:
 			fmt.Printf("> rune, %U, %U, %U, %U\n", 'a', 'z', 'A', 'Z')
 
@@ -59,7 +59,7 @@ func main() {
 
 			fmt.Printf("> rune, non alphabet: %c\n", i)
 		default:
-			fmt.Printf("> rune, unknown %T, %c\n", c, c)
+			fmt.Printf("> rune, unknown %T, %c\n", i, i)
 		}
 	}
 
