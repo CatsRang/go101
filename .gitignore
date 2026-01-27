@@ -1,2 +1,4 @@
 .idea/
 /go.sum
+/CLAUDE.md
+\n.DS_Store\n**/test.db

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://raw.githubusercontent.com/zhuxiujia/GoMybatis/master/mybatis-3-mapper.dtd">
+<mapper>
+    <resultMap id="BaseResultMap" tables="users">
+        <id column="id" property="Id" langType="int"/>
+        <result column="username" property="Username" langType="string"/>
+        <result column="email" property="Email" langType="string"/>
+        <result column="status" property="Status" langType="int"/>
+        <result column="create_time" property="CreateTime" langType="string"/>
+    </resultMap>
+
+    <select id="SelectById" resultMap="BaseResultMap">
+        SELECT * FROM users WHERE id = #{id}
+    </select>
+
+    <insert id="Insert">
+        INSERT INTO users(username, email, status, create_time)
+        VALUES(#{Username}, #{Email}, #{Status}, #{CreateTime})
+    </insert>
+
+    <select id="SelectAll" resultMap="BaseResultMap">
+        SELECT * FROM users
+    </select>
+</mapper>
