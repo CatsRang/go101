@@ -34,10 +34,10 @@ func BenchmarkSubmit(b *testing.B) {
 	client := &http.Client{Timeout: 5 * time.Second}
 	b.ResetTimer()
 
-	for i := 0; i < b.N; i++ {
+	for b.Loop() {
 		var wg sync.WaitGroup
 		wg.Add(100) // number of concurrent clients to simulate
-		for c := 0; c < 100; c++ {
+		for range 100 {
 			go func() {
 				defer wg.Done()
 				job := Job{ID: "x", Data: "payload"}
